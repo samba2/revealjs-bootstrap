@@ -3,16 +3,16 @@ REVEALJS_URL='https://github.com/hakimel/reveal.js/archive/3.8.0.tar.gz'
 
 init:
 	curl -L ${REVEALJS_URL}  | \
-		tar xvz --strip-components=1 \
-			--exclude "reveal.js-*/test" \
-			--exclude "reveal.js-*/*.md" \
-			--exclude "reveal.js-*/.gitignore" \
-			--exclude "reveal.js-*/LICENSE" \
-			--exclude "reveal.js-*/.travis.yml" \
-			--exclude "reveal.js-*/*.json" \
-			--exclude "reveal.js-*/demo.html" \
-			--exclude "reveal.js-*/gruntfile.js" \
-			--exclude "reveal.js-*/index.html"
+	tar xvz --strip-components=1 \
+		--exclude "reveal.js-*/test" \
+		--exclude "reveal.js-*/*.md" \
+		--exclude "reveal.js-*/.gitignore" \
+		--exclude "reveal.js-*/LICENSE" \
+		--exclude "reveal.js-*/.travis.yml" \
+		--exclude "reveal.js-*/*.json" \
+		--exclude "reveal.js-*/demo.html" \
+		--exclude "reveal.js-*/gruntfile.js" \
+		--exclude "reveal.js-*/index.html"
 
 start_http_server:
 	(python3 -m http.server $(HTTP_PORT) 2>&1 >/dev/null) 2>&1 >/dev/null|| true &
